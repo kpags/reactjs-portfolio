@@ -1,5 +1,11 @@
+import { Home } from "./pages/pages.tsx";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
 
 export default App;

@@ -1,0 +1,11 @@
+@import "./breakpoints/Breakpoints.scss";
+@import "./keyframes/Keyframes.scss";
+@import "./fontFamilies/FontFamilies.scss";
+
+@import "./home/Navbar.scss";
+@import "./home/Details.scss";
+
+html, body {
+    height: 100%;
+    margin: 0;
+}

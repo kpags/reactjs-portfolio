@@ -1,0 +1,17 @@
+@keyframes sparklePink {
+    0% {
+        box-shadow: 0 0 5px #de164b, 0 0 5px #da3c66;
+    }
+    25% {
+        box-shadow: 0 0 10px #ad103a, 0 0 10px #ad3c5a;
+    }
+    50% {
+        box-shadow: 0 0 15px #8d0d2f, 0 0 5px #882d46;
+    }
+    75% {
+        box-shadow: 0 0 10px #ad103a, 0 0 10px #ad3c5a;
+    }
+    100% {
+        box-shadow: 0 0 5px #8d0d2f, 0 0 5px #882d46;
+    }
+}

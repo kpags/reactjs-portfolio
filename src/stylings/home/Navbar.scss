@@ -1,0 +1,28 @@
+.navbar-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #100f1a;
+    width: 100%;
+    height: 65px;
+    align-items: center;
+    padding: 0 20px 0 20px;
+
+    .username-text {
+        color: white;
+        font-family: "Titillium Web", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .bi-list {
+        font-size: 23px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+
+        &:hover, &:active{
+            background-color: rgb(141, 141, 141);
+            border-radius: 30%;
+        }
+    }
+}
