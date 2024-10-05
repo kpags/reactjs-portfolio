@@ -19,11 +19,17 @@ const Details = () => {
             <div className="see-projects-btn">See Projects</div>
           </div>
         </div>
+        {/* PICTURE WRAP FOR MOBILE */}
         <div className="picture-wrap">
           <div className="oval-bg"></div>
           <div className="picture-border">
             <img className="profile-pic" src={myPic} alt="Profile Pic" />
           </div>
+        </div>
+        {/* PICTURE WRAP FOR TABLE AND LARGER DEVICES */}
+        <div className="picture-wrap-wide">
+          <div className="oval-bg"></div>
+          <img className="profile-pic" src={myPic} alt="Profile Pic" />
         </div>
       </div>
     </>
