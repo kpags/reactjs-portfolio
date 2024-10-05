@@ -31,6 +31,12 @@
             padding-top: 60px;
         }
 
+        @media (min-width: 991px) and (max-width: 1019px){
+            align-items: flex-start;
+            padding-left: 50px;
+            padding-top: 60px;
+        }
+
         .greet-text {
             text-align: left;
             color: #7a70b6;
@@ -40,6 +46,10 @@
             font-style: normal;
 
             @include tablet {
+                font-size: 30px;
+            }
+
+            @media (min-width: 991px) and (max-width: 1019px){
                 font-size: 30px;
             }
         }
@@ -57,6 +67,12 @@
                 gap: 10px;
             }
 
+            @media (min-width: 991px) and (max-width: 1019px){
+                justify-content: left;
+                flex-direction: row;
+                gap: 10px;
+            }
+
             label {
                 color: #000000;
                 font-size: 50px;
@@ -65,6 +81,10 @@
                 line-height: 50px;
 
                 @include tablet {
+                    font-size: 65px;
+                }
+
+                @media (min-width: 991px) and (max-width: 1019px){
                     font-size: 65px;
                 }
             }
@@ -84,6 +104,12 @@
                 padding: 10px 55px 10px 0;
                 font-size: 21px;
             }
+
+            @media (min-width: 991px) and (max-width: 1019px) {
+                text-align: left;
+                padding: 10px 65px 10px 0;
+                font-size: 24px;
+            }
         }
 
         .button-wrap {
@@ -92,6 +118,10 @@
             justify-content: center;
 
             @include tablet {
+                justify-content: left;
+            }
+
+            @media (min-width: 991px) and (max-width: 1019px){
                 justify-content: left;
             }
 
@@ -130,12 +160,16 @@
             display: none;
         }
 
+        @media (min-width: 768px) {
+            display: none;
+        }
+
         .oval-bg {
             width: 100%;
             height: 60%;
             background: #7a70b6;
-            border-top-left-radius: 70% 90%;
-            border-top-right-radius: 70% 90%;
+            border-top-left-radius: 50% 90%;
+            border-top-right-radius: 50% 90%;
 
             @include lg-phone {
                 border-top-left-radius: 50% 90%;
@@ -200,12 +234,12 @@
         }
 
         .oval-bg {
-            width: 80%;
+            width: 75%;
             height: 100%;
             background: #7a70b6;
             border-top-left-radius: 50% 90%;
             border-top-right-radius: 50% 90%;
-            transform: translate(-1%, 20%);
+            transform: translate(-1%, 30%);
         }
 
         .profile-pic {
