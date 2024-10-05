@@ -1,1 +1,1 @@
-export { default as Home } from "./Home/Home.tsx";
+export { default as Home } from "./home/Home.tsx";

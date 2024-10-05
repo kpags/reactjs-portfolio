@@ -2,9 +2,10 @@
 @import "./keyframes/Keyframes.scss";
 @import "./fontFamilies/FontFamilies.scss";
 
-@import "./home/Navbar.scss";
+@import "./navbar/Navbar.scss";
+@import "./navbar/Menu.scss";
+
 @import "./home/Details.scss";
-@import "./home/Menu.scss";
 
 html, body {
     height: 100%;

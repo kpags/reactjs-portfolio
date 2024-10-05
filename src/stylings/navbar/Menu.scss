@@ -22,6 +22,10 @@
         width: 370px;
     }
 
+    @media (min-width: 768px) {
+        display: none;
+    }
+
     .header-wrap {
         display: flex;
         flex-direction: row;
