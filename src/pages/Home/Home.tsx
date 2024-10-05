@@ -1,9 +1,8 @@
-import { Navbar, Details } from "../../components/components.tsx";
+import { Details } from "../../components/components.tsx";
 
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Details />
     </>
   );
