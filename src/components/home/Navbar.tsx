@@ -54,6 +54,15 @@ const Navbar = () => {
             toggleMenu();
           }}
         ></i>
+
+        {/* MENU TEXT FOR TABLET OR LARGER */}
+        <div className="navbar-options">
+          <label className="home-option">Home</label>
+          <label className="about-option">About</label>
+          <label className="projects-option">Projects</label>
+          <label className="resume-option">Resume</label>
+          <label className="contact-option">Contact Me</label>
+        </div>
       </div>
     </>
   );

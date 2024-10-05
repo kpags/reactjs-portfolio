@@ -55,6 +55,7 @@
             justify-content: center;
 
             .see-projects-btn {
+                cursor: pointer;
                 transition: 0.5s ease-in-out;
                 animation: sparklePink 1.5s infinite;
                 padding: 10px;
@@ -62,7 +63,6 @@
                 width: 130px;
                 border-radius: 5px;
                 background: #de164b;
-
                 font-family: "Titillium Web", sans-serif;
                 font-style: normal;
                 font-weight: 600;
@@ -87,6 +87,11 @@
             background: #7a70b6;
             border-top-left-radius: 70% 90%;
             border-top-right-radius: 70% 90%;
+
+            @include lg-phone {
+                border-top-left-radius: 50% 90%;
+                border-top-right-radius: 50% 90%;
+            }
         }
 
         .picture-border {
@@ -112,6 +117,14 @@
                 height: 100%;
                 object-fit: cover;
                 transition: 0.5s ease-in-out;
+
+                @include m-phone {
+                    transform: translateX(-1%);
+                }
+
+                @include lg-phone {
+                    transform: translateX(-1%);
+                }
             }
         }
     }
