@@ -6,6 +6,10 @@
     width: 100%;
     overflow: hidden;
 
+    @media (max-height: 684px) {
+        overflow: unset;
+    }
+
     @media (min-height: 685px) and (max-height: 730px) {
         height: 100vh;
     }
