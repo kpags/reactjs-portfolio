@@ -18,6 +18,11 @@
         padding-right: 50px;
     }
 
+    @include sm-laptop {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
     .username-text {
         color: white;
         font-family: "Titillium Web", sans-serif;
@@ -26,6 +31,10 @@
 
         @include tablet {
             font-size: 22px;
+        }
+
+        @include sm-laptop {
+            font-size: 24px;
         }
     }
 
@@ -62,6 +71,10 @@
             width: 65%;
         }
 
+        @include sm-laptop {
+            width: 65%;
+        }
+
         label {
             font-family: "Titillium Web", sans-serif;
             font-weight: 500;
@@ -69,11 +82,15 @@
             color: white;
 
             &:hover, &:active {
-                color: rgb(160, 160, 160);
+                color: #7b70b5;
             }
 
             @include tablet {
                 font-size: 18px;
+            }
+
+            @include sm-laptop {
+                font-size: 20px;
             }
         }
     }

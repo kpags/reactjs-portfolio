@@ -14,6 +14,10 @@
         height: 100vh;
     }
 
+    @include sm-laptop {
+        flex-direction: row;
+    }
+
     .intro-wrap {
         // border: 1px solid black;
         display: flex;
@@ -37,6 +41,12 @@
             padding-top: 60px;
         }
 
+        @include sm-laptop {
+            padding: 150px 0 150px 40px;
+            height: 100%;
+            align-items: flex-start;
+        }
+
         .greet-text {
             text-align: left;
             color: #7a70b6;
@@ -51,6 +61,10 @@
 
             @media (min-width: 991px) and (max-width: 1019px){
                 font-size: 30px;
+            }
+
+            @include sm-laptop {
+                font-size: 32px;
             }
         }
 
@@ -73,6 +87,13 @@
                 gap: 10px;
             }
 
+            @include sm-laptop {
+                padding-top: 10px;
+                justify-content: left;
+                flex-direction: row;
+                gap: 10px;
+            }
+
             label {
                 color: #000000;
                 font-size: 50px;
@@ -86,6 +107,10 @@
 
                 @media (min-width: 991px) and (max-width: 1019px){
                     font-size: 65px;
+                }
+
+                @include sm-laptop {
+                    font-size: 72px;
                 }
             }
         }
@@ -110,6 +135,12 @@
                 padding: 10px 65px 10px 0;
                 font-size: 24px;
             }
+
+            @include sm-laptop {
+                text-align: left;
+                padding: 20px 40px 10px 0;
+                font-size: 24px;
+            }
         }
 
         .button-wrap {
@@ -121,7 +152,12 @@
                 justify-content: left;
             }
 
-            @media (min-width: 991px) and (max-width: 1019px){
+            @media (min-width: 991px) and (max-width: 1019px) {
+                justify-content: left;
+            }
+
+            @include sm-laptop {
+                padding-top: 20px;
                 justify-content: left;
             }
 
@@ -240,6 +276,45 @@
             border-top-left-radius: 50% 90%;
             border-top-right-radius: 50% 90%;
             transform: translate(-1%, 30%);
+
+            @include sm-laptop {
+                display: none;
+            }
+        }
+
+        .hanging-welcome-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 28%;
+
+            .hanging-line {
+                border: 1px solid rgb(223, 223, 223);
+                width: 0;
+                height: 35%;
+                animation: superSlowSwing 8.5s ease-in-out infinite;
+            }
+
+            .hanging-board {
+                width: 300px;
+                height: 75px;
+                // border: 1px solid black;
+                border-radius: 15px;
+                animation: superSlowSwing 8.5s ease-in-out infinite;
+                text-align: center;
+                background: #eacda3;
+                background: linear-gradient(to right,#eacda3,#d6ae7b);
+
+                .welcome-text {
+                    font-family: "Barlow Condensed", sans-serif;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-size: 46px;
+                    letter-spacing: 12px;
+                    color: white;
+                }
+            }
         }
 
         .profile-pic {
@@ -251,6 +326,12 @@
             right: 0;
             transition: 0.5s ease-in-out;
             transform: translateX(15%);
+
+            @include sm-laptop {
+                width: 100%;
+                height: 90%;
+                transform: none;
+            }
         }
     }
 }
