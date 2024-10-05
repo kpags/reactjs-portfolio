@@ -383,7 +383,7 @@
                 border: 1px solid rgb(223, 223, 223);
                 width: 0;
                 height: 35%;
-                animation: superSlowSwing 8.5s ease-in-out infinite;
+                animation: superSlowSwing 4.5s ease-in-out infinite;
 
                 @include lg-laptop {
                     height: 45%;
@@ -395,7 +395,7 @@
                 height: 75px;
                 // border: 1px solid black;
                 border-radius: 15px;
-                animation: superSlowSwing 8.5s ease-in-out infinite;
+                animation: superSlowSwing 4.5s ease-in-out infinite;
                 text-align: center;
                 background: #eacda3;
                 background: linear-gradient(to right,#eacda3,#d6ae7b);
