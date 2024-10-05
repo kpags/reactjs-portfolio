@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NavigateTo from "../../utilities/NavigateTo.tsx";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuStatus] = useState(false);
@@ -25,11 +26,15 @@ const Navbar = () => {
         <div className="menu-rows">
           <div className="menu-row">
             <i className="bi bi-house-door"></i>
-            <label className="home">Home</label>
+            <label className="home" onClick={NavigateTo("/")}>
+              Home
+            </label>
           </div>
           <div className="menu-row">
             <i className="bi bi-person"></i>
-            <label className="about">About</label>
+            <label className="about" onClick={NavigateTo("/about")}>
+              About
+            </label>
           </div>
           <div className="menu-row">
             <i className="bi bi-briefcase"></i>
@@ -57,8 +62,12 @@ const Navbar = () => {
 
         {/* MENU TEXT FOR TABLET OR LARGER */}
         <div className="navbar-options">
-          <label className="home-option">Home</label>
-          <label className="about-option">About</label>
+          <label className="home-option" onClick={NavigateTo("/")}>
+            Home
+          </label>
+          <label className="about-option" onClick={NavigateTo("/about")}>
+            About
+          </label>
           <label className="projects-option">Projects</label>
           <label className="resume-option">Resume</label>
           <label className="contact-option">Contact Me</label>
