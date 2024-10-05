@@ -28,13 +28,13 @@ const Details = () => {
         </div>
         {/* PICTURE WRAP FOR TABLE AND LARGER DEVICES */}
         <div className="picture-wrap-wide">
-          <div className="oval-bg"></div>
           <div className="hanging-welcome-wrap">
             <div className="hanging-line"></div>
             <div className="hanging-board">
               <label className="welcome-text">WELCOME</label>
             </div>
           </div>
+          <div className="oval-bg"></div>
           <img className="profile-pic" src={myPic} alt="Profile Pic" />
         </div>
       </div>

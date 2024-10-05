@@ -23,6 +23,11 @@
         padding-right: 50px;
     }
 
+    @include lg-laptop {
+        padding-left: 122px;
+        padding-right: 50px;
+    }
+
     .username-text {
         color: white;
         font-family: "Titillium Web", sans-serif;
@@ -34,6 +39,10 @@
         }
 
         @include sm-laptop {
+            font-size: 24px;
+        }
+
+        @include lg-laptop {
             font-size: 24px;
         }
     }
@@ -75,6 +84,10 @@
             width: 65%;
         }
 
+        @include lg-laptop {
+            width: 70%;
+        }
+
         label {
             font-family: "Titillium Web", sans-serif;
             font-weight: 500;
@@ -90,6 +103,10 @@
             }
 
             @include sm-laptop {
+                font-size: 20px;
+            }
+
+            @include lg-laptop {
                 font-size: 20px;
             }
         }
