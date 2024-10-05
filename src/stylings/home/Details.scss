@@ -40,17 +40,13 @@
         }
 
         .desc-wrap {
-            padding: 10px 15px 10px 15px;
+            padding: 10px 15% 10px 15%;
             width: 100%;
             text-align: center;
             font-size: 17px;
             font-family: "Titillium Web", sans-serif;
             font-style: normal;
             opacity: 0.8;
-
-            @include m-phone {
-                padding: 10px 33px 10px 33px;
-            }
         }
 
         .button-wrap {

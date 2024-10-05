@@ -8,6 +8,9 @@ const Navbar = () => {
 
   return (
     <>
+      {/* BLUR WRAP*/}
+      {isMenuOpen ? <div className="blur-wrap"></div> : <></>}
+
       {/* MENU */}
       <div className={isMenuOpen ? "menu-wrap" : "menu-wrap closed"}>
         <div className="header-wrap">
