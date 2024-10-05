@@ -85,8 +85,8 @@
             width: 100%;
             height: 60%;
             background: #7a70b6;
-            border-top-left-radius: 100% 50%;
-            border-top-right-radius: 100% 50%;
+            border-top-left-radius: 70% 90%;
+            border-top-right-radius: 70% 90%;
         }
 
         .picture-border {
@@ -96,6 +96,14 @@
 
             @media (max-height: 730px) {
                 height: 48%;
+            }
+
+            @include m-phone {
+                height: 55%;
+            }
+
+            @include lg-phone {
+                height: 58%;
             }
 
             .profile-pic {
