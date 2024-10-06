@@ -7,14 +7,17 @@
     &::after {
         display: none;
     }
+
+    .option {
+        display: none;
+    }
 }
 
 .episode-wrap {
-    animation: episodeMenuSlideOpen 0.1s ease-in-out forwards;
     width: 150px;
-    height: 300px;
+    height: 218px;
     border: 1px solid black;
-    z-index: 2;
+    z-index: 1;
     position: relative;
     background-color: white;
     border-top-left-radius: 10px;
@@ -22,7 +25,10 @@
     margin-bottom: 15px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    animation: episodeMenuSlideOpen 0.1s ease-in-out forwards;
 
     &::before {
         content: '';
@@ -42,5 +48,35 @@
         border-left: 8px solid transparent;
         border-right: 18px solid transparent;
         border-top: 20px solid white;
+    }
+
+    .option {
+        animation: fadeIn 0.2s ease-in-out forwards;
+        width: 100%;
+        padding: 15px 15px 14.8px 15px;
+        text-align: center;
+
+        label {
+            font-family: "Titillium Web", sans-serif;
+            font-style: normal;
+        }
+
+        &:hover {
+            background: rgb(236, 236, 236);
+        }
+    }
+
+    .option.active {
+        background: rgb(236, 236, 236);
+    }
+
+    .option.profile {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .option.hobbies {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }

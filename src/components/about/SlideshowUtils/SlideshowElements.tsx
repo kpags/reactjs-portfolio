@@ -3,12 +3,75 @@ import { TailSpin } from "react-loading-icons";
 
 interface EpisodesMenuProps {
   isVisible: boolean;
+  selectedEpisode: number;
+  setSelectedEpisode: (value: number) => void;
 }
 
-export const EpisodesMenu = ({ isVisible }: EpisodesMenuProps) => {
+export const EpisodesMenu = ({
+  isVisible,
+  selectedEpisode,
+  setSelectedEpisode,
+}: EpisodesMenuProps) => {
+  const [isMenuOpen, setMenuStatus] = useState(() => {
+    const storedStatus = localStorage.getItem("isMenuOpen");
+    return storedStatus ? JSON.parse(storedStatus) : false;
+  });
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const storedStatus = localStorage.getItem("isMenuOpen");
+      setMenuStatus(storedStatus ? JSON.parse(storedStatus) : false);
+    };
+
+    window.addEventListener("menuStatus", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("menuStatus", handleStorageChange);
+    };
+  }, []);
+
   return (
     <>
-      <div className={isVisible ? "episode-wrap" : "episode-wrap closed"}></div>
+      <div
+        className={
+          isVisible && !isMenuOpen ? "episode-wrap" : "episode-wrap closed"
+        }
+      >
+        <div
+          className={
+            selectedEpisode === 0 ? "option active profile" : "option profile"
+          }
+          onClick={() => setSelectedEpisode(0)}
+        >
+          <label className="profile-text">Profile</label>
+        </div>
+        <div
+          className={
+            selectedEpisode === 1
+              ? "option active academics"
+              : "option academics"
+          }
+          onClick={() => setSelectedEpisode(1)}
+        >
+          <label className="academics-text">Academics</label>
+        </div>
+        <div
+          className={
+            selectedEpisode === 2 ? "option active skills" : "option skills"
+          }
+          onClick={() => setSelectedEpisode(2)}
+        >
+          <label className="skills-text">Skills</label>
+        </div>
+        <div
+          className={
+            selectedEpisode === 3 ? "option active hobbies" : "option hobbies"
+          }
+          onClick={() => setSelectedEpisode(3)}
+        >
+          <label className="hobbies-text">Hobbies</label>
+        </div>
+      </div>
     </>
   );
 };

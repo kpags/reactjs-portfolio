@@ -8,17 +8,22 @@ import { SystemUiconsEpisodes } from "./SlideshowUtils/SlideshowIcons.tsx";
 
 interface SlideshowProps {
   setIsEpisodesMenuVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedEpisode: React.Dispatch<React.SetStateAction<number>>;
+  selectedEpisode: number;
 }
 
-const Slideshow = ({ setIsEpisodesMenuVisible }: SlideshowProps) => {
-  const [currentSlideshowIndex, setCurrentSlideshowIndex] = useState(0);
+const Slideshow = ({
+  setIsEpisodesMenuVisible,
+  setSelectedEpisode,
+  selectedEpisode,
+}: SlideshowProps) => {
   const [currentDirection, setCurrentDirection] = useState("");
 
   const toggleSlideshowIndex = (direction: string) => {
     if (direction === "previous") {
-      setCurrentSlideshowIndex(currentSlideshowIndex - 1);
+      setSelectedEpisode(selectedEpisode - 1);
     } else if (direction === "next") {
-      setCurrentSlideshowIndex(currentSlideshowIndex + 1);
+      setSelectedEpisode(selectedEpisode + 1);
     }
   };
 
@@ -30,22 +35,18 @@ const Slideshow = ({ setIsEpisodesMenuVisible }: SlideshowProps) => {
           onClick={() => setIsEpisodesMenuVisible((prev) => !prev)}
         />
         <SolarMapArrowLeftLinear
-          className={
-            currentSlideshowIndex > 0 ? "arrow left" : "arrow left hidden"
-          }
+          className={selectedEpisode > 0 ? "arrow left" : "arrow left hidden"}
           onClick={() => {
             toggleSlideshowIndex("previous");
             setCurrentDirection("previous");
           }}
         />
         <SlideshowPreview
-          currentSlideshowIndex={currentSlideshowIndex + 1}
+          currentSlideshowIndex={selectedEpisode + 1}
           currentDirection={currentDirection}
         />
         <SolarMapArrowRightLinear
-          className={
-            currentSlideshowIndex < 3 ? "arrow right" : "arrow right hidden"
-          }
+          className={selectedEpisode < 3 ? "arrow right" : "arrow right hidden"}
           onClick={() => {
             toggleSlideshowIndex("next");
             setCurrentDirection("next");

@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  localStorage.removeItem("isMenuOpen");
+
   const navigate = useNavigate();
   const [isMenuOpen, setMenuStatus] = useState(false);
   const toggleMenu = () => {
     setMenuStatus(!isMenuOpen);
+    localStorage.setItem("isMenuOpen", JSON.stringify(!isMenuOpen));
+
+    window.dispatchEvent(
+      new CustomEvent("menuStatus", { detail: !isMenuOpen })
+    );
   };
 
   return (
