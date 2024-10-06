@@ -1,4 +1,4 @@
-import { Slideshow, About } from "../../components/components";
+import { About } from "../../components/components";
 
 const AboutPage = () => {
   return (
