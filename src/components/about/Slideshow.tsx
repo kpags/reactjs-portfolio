@@ -35,7 +35,7 @@ const Slideshow = () => {
         />
         <SolarMapArrowRightLinear
           className={
-            currentSlideshowIndex !== 4 ? "arrow right" : "arrow right hidden"
+            currentSlideshowIndex < 3 ? "arrow right" : "arrow right hidden"
           }
           onClick={() => {
             toggleSlideshowIndex("next");

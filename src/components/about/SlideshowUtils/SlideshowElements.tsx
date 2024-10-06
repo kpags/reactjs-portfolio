@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-
-import Profile from "../../../assets/profile.jpg";
-import GradCap from "../../../assets/grad-cap.jpg";
+import { TailSpin } from "react-loading-icons";
 
 interface SlideshowPreviewProps {
   currentSlideshowIndex: number;
@@ -29,15 +27,18 @@ export const SlideshowPreviewPictures = ({
   currentDirection,
 }: SlideshowPreviewProps) => {
   const [animateDirection, setAnimation] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   const pictures = {
-    1: Profile,
-    2: GradCap,
+    1: "https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728189149/profile_oiukhi.jpg",
+    2: "https://res.cloudinary.com/dqszzzdu1/image/upload/v1728189549/academics_busrh5.jpg",
+    3: "https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728188565/skills_cx0k2e.jpg",
+    4: "https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728188764/hobbies_wsbrb5.jpg",
   };
 
   const pictureTitle = {
     1: "Who's me?",
-    2: "Schools",
+    2: "Academics",
     3: "My Skills",
     4: "Hobbies",
   };
@@ -58,16 +59,17 @@ export const SlideshowPreviewPictures = ({
 
   return (
     <>
-      {
-        <img
-          src={currentPicture}
-          className={`preview-picture ${currentPicture} ${
-            animateDirection
-              ? `${currentDirection === "previous" ? "previous" : "next"} `
-              : ""
-          }`}
-        />
-      }
+      {isLoading && <TailSpin stroke="black" />}
+      <img
+        loading="lazy"
+        onLoad={() => setLoading(false)}
+        src={currentPicture}
+        className={`preview-picture img-${currentSlideshowIndex} ${
+          animateDirection
+            ? `${currentDirection === "previous" ? "previous" : "next"} `
+            : ""
+        }`}
+      />
       <label className="picture-title">{currentPictureTitle}</label>
     </>
   );

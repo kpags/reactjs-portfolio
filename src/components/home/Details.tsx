@@ -1,5 +1,3 @@
-import myPic from "../../assets/myPic.png";
-
 const Details = () => {
   return (
     <>
@@ -23,7 +21,11 @@ const Details = () => {
         <div className="picture-wrap">
           <div className="oval-bg"></div>
           <div className="picture-border">
-            <img className="profile-pic" src={myPic} alt="Profile Pic" />
+            <img
+              className="profile-pic"
+              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728186951/myPic_mxzxbd.png"
+              alt="Profile Pic"
+            />
           </div>
         </div>
         {/* PICTURE WRAP FOR TABLE AND LARGER DEVICES */}
@@ -35,7 +37,11 @@ const Details = () => {
             </div>
           </div>
           <div className="oval-bg"></div>
-          <img className="profile-pic" src={myPic} alt="Profile Pic" />
+          <img
+            className="profile-pic"
+            src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728186951/myPic_mxzxbd.png"
+            alt="Profile Pic"
+          />
         </div>
       </div>
     </>
