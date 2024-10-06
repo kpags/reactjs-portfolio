@@ -1,6 +1,6 @@
 import { Details } from "../../components/components.tsx";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Details />
@@ -8,4 +8,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

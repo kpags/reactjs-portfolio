@@ -1,2 +1,2 @@
-export { default as Home } from "./Home/Home.tsx";
-export { default as About } from "./about/About.tsx";
+export { default as HomePage } from "./home/HomePage.tsx";
+export { default as AboutPage } from "./about/AboutPage.tsx";
