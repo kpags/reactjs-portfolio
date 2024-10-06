@@ -14,11 +14,11 @@
 }
 
 .episode-wrap {
+    position: absolute;
     width: 150px;
     height: 218px;
     border: 1px solid black;
     z-index: 1;
-    position: relative;
     background-color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -51,7 +51,7 @@
     }
 
     .option {
-        animation: fadeIn 0.2s ease-in-out forwards;
+        animation: fadeIn 0.45s ease-in-out forwards;
         width: 100%;
         padding: 15px 15px 14.8px 15px;
         text-align: center;

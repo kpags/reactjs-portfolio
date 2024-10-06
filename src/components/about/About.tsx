@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Slideshow from "./Slideshow";
+import Presentation from "./Presentation";
 import { EpisodesMenu } from "./SlideshowUtils/SlideshowElements";
 
 const About = () => {
@@ -14,6 +15,7 @@ const About = () => {
   return (
     <>
       <div className="about-wrap">
+        <Presentation />
         <EpisodesMenu
           isVisible={isEpisodesMenuVisible}
           selectedEpisode={selectedEpisode}
