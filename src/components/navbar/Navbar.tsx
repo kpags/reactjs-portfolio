@@ -1,7 +1,8 @@
 import { useState } from "react";
-import NavigateTo from "../../utilities/NavigateTo.tsx";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setMenuStatus] = useState(false);
   const toggleMenu = () => {
     setMenuStatus(!isMenuOpen);
@@ -24,17 +25,25 @@ const Navbar = () => {
           ></i>
         </div>
         <div className="menu-rows">
-          <div className="menu-row">
+          <div
+            className="menu-row"
+            onClick={() => {
+              navigate("/");
+              toggleMenu();
+            }}
+          >
             <i className="bi bi-house-door"></i>
-            <label className="home" onClick={NavigateTo("/")}>
-              Home
-            </label>
+            <label className="home">Home</label>
           </div>
-          <div className="menu-row">
+          <div
+            className="menu-row"
+            onClick={() => {
+              navigate("/about");
+              toggleMenu();
+            }}
+          >
             <i className="bi bi-person"></i>
-            <label className="about" onClick={NavigateTo("/about")}>
-              About
-            </label>
+            <label className="about">About</label>
           </div>
           <div className="menu-row">
             <i className="bi bi-briefcase"></i>
@@ -62,10 +71,20 @@ const Navbar = () => {
 
         {/* MENU TEXT FOR TABLET OR LARGER */}
         <div className="navbar-options">
-          <label className="home-option" onClick={NavigateTo("/")}>
+          <label
+            className="home-option"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             Home
           </label>
-          <label className="about-option" onClick={NavigateTo("/about")}>
+          <label
+            className="about-option"
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
             About
           </label>
           <label className="projects-option">Projects</label>
