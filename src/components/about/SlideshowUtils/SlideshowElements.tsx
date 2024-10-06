@@ -1,6 +1,18 @@
 import { useState, useEffect } from "react";
 import { TailSpin } from "react-loading-icons";
 
+interface EpisodesMenuProps {
+  isVisible: boolean;
+}
+
+export const EpisodesMenu = ({ isVisible }: EpisodesMenuProps) => {
+  return (
+    <>
+      <div className={isVisible ? "episode-wrap" : "episode-wrap closed"}></div>
+    </>
+  );
+};
+
 interface SlideshowPreviewProps {
   currentSlideshowIndex: number;
   currentDirection: string;

@@ -4,8 +4,13 @@ import {
   SolarMapArrowRightLinear,
   SolarMapArrowLeftLinear,
 } from "./SlideshowUtils/SlideshowIcons";
+import { SystemUiconsEpisodes } from "./SlideshowUtils/SlideshowIcons.tsx";
 
-const Slideshow = () => {
+interface SlideshowProps {
+  setIsEpisodesMenuVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Slideshow = ({ setIsEpisodesMenuVisible }: SlideshowProps) => {
   const [currentSlideshowIndex, setCurrentSlideshowIndex] = useState(0);
   const [currentDirection, setCurrentDirection] = useState("");
 
@@ -20,6 +25,10 @@ const Slideshow = () => {
   return (
     <>
       <div className="slideshow-wrap">
+        <SystemUiconsEpisodes
+          className="ui-episodes"
+          onClick={() => setIsEpisodesMenuVisible((prev) => !prev)}
+        />
         <SolarMapArrowLeftLinear
           className={
             currentSlideshowIndex > 0 ? "arrow left" : "arrow left hidden"
