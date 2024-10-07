@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 92vh;
+    height: calc(100vh - 65px);
     width: 100%;
     overflow: hidden;
 
