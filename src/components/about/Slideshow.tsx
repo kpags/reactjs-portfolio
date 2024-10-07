@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SlideshowPreview } from "./SlideshowUtils/SlideshowElements";
 import {
   SolarMapArrowRightLinear,
