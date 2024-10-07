@@ -61,10 +61,26 @@ const ProfileContent = () => {
   );
 };
 
-const Presentation = () => {
+const AcademicsContent = () => {
   return (
     <>
-      <ProfileContent />
+      <div className="content academics">
+        <h1>Hello</h1>
+      </div>
+    </>
+  );
+};
+
+interface PresentationProps {
+  currentSlideshowIndex: number;
+}
+
+const Presentation = ({ currentSlideshowIndex }: PresentationProps) => {
+  console.log("Presentation", currentSlideshowIndex);
+  return (
+    <>
+      {currentSlideshowIndex === 0 && <ProfileContent />}
+      {currentSlideshowIndex === 1 && <AcademicsContent />}
     </>
   );
 };

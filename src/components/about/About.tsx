@@ -7,6 +7,7 @@ import { EpisodesMenu } from "./SlideshowUtils/SlideshowElements";
 const About = () => {
   const [isEpisodesMenuVisible, setIsEpisodesMenuVisible] = useState(false);
   const [selectedEpisode, setSelectedEpisode] = useState(0);
+  const [currentDirection, setCurrentDirection] = useState("");
 
   const toggleEpisode = (index: number) => {
     setSelectedEpisode(index);
@@ -15,7 +16,7 @@ const About = () => {
   return (
     <>
       <div className="about-wrap">
-        <Presentation />
+        <Presentation currentSlideshowIndex={selectedEpisode} />
         <EpisodesMenu
           isVisible={isEpisodesMenuVisible}
           selectedEpisode={selectedEpisode}
@@ -24,7 +25,9 @@ const About = () => {
         <Slideshow
           setIsEpisodesMenuVisible={setIsEpisodesMenuVisible}
           setSelectedEpisode={setSelectedEpisode}
+          setCurrentDirection={setCurrentDirection}
           selectedEpisode={selectedEpisode}
+          currentDirection={currentDirection}
         />
       </div>
     </>

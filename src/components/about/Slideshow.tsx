@@ -9,16 +9,18 @@ import { SystemUiconsEpisodes } from "./SlideshowUtils/SlideshowIcons.tsx";
 interface SlideshowProps {
   setIsEpisodesMenuVisible: React.Dispatch<React.SetStateAction<boolean>>;
   setSelectedEpisode: React.Dispatch<React.SetStateAction<number>>;
+  setCurrentDirection: React.Dispatch<React.SetStateAction<string>>;
+  currentDirection: string;
   selectedEpisode: number;
 }
 
 const Slideshow = ({
   setIsEpisodesMenuVisible,
   setSelectedEpisode,
+  setCurrentDirection,
   selectedEpisode,
+  currentDirection,
 }: SlideshowProps) => {
-  const [currentDirection, setCurrentDirection] = useState("");
-
   const toggleSlideshowIndex = (direction: string) => {
     if (direction === "previous") {
       setSelectedEpisode(selectedEpisode - 1);
