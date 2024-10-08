@@ -1,7 +1,18 @@
-const ProfileContent = () => {
+import { useState } from "react";
+interface ContentProps {
+  direction: string;
+}
+
+const ProfileContent = ({ direction }: ContentProps) => {
   return (
     <>
-      <div className="content profile">
+      <div
+        className={
+          direction === "next"
+            ? "content next profile"
+            : "content previous profile"
+        }
+      >
         <div className="title-wrap">
           <div className="line"></div>
           <label className="title">About Me</label>
@@ -38,7 +49,7 @@ const ProfileContent = () => {
           </div>
 
           <div className="thoughts-wrap">
-            - I've always been fascinated by how technology works and the impact
+            I've always been fascinated by how technology works and the impact
             it has on our society. This curiosity is what led me to pursue a
             career in IT—I wanted to dive into the world of technology and
             understand what makes it function and evolve. Technology is
@@ -61,11 +72,84 @@ const ProfileContent = () => {
   );
 };
 
-const AcademicsContent = () => {
+const AcademicsContent = ({ direction }: ContentProps) => {
+  const [educationIndex, setEducationIndex] = useState(0);
+
   return (
     <>
-      <div className="content academics">
-        <h1>Hello</h1>
+      <div
+        className={
+          direction === "next"
+            ? "content next academics"
+            : "content previous academics"
+        }
+      >
+        <div className="arrows">
+          <i
+            className={
+              educationIndex === 0
+                ? "bi none bi-arrow-left"
+                : "bi bi-arrow-left"
+            }
+            onClick={() => setEducationIndex(educationIndex - 1)}
+          ></i>
+          <i
+            className={
+              educationIndex === 2
+                ? "bi none bi-arrow-right"
+                : "bi bi-arrow-right"
+            }
+            onClick={() => setEducationIndex(educationIndex + 1)}
+          ></i>
+        </div>
+        <div
+          className={
+            educationIndex === 0
+              ? "education highschool"
+              : "education none highschool"
+          }
+          onLoad={() => setEducationIndex(0)}
+        >
+          <div className="picture-wrap">
+            <img
+              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728392435/ust_ehs_dzjda3.png"
+              className="image ehs"
+            />
+          </div>
+          <div className="text-label-wrap">
+            <label className="text ehs">UST Education High School</label>
+            <label className="text ehs-year">2013 - 2017</label>
+          </div>
+          <div className="gif-wrap">
+            <img
+              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728396095/hs_walking_rgxhlr.gif"
+              className="walking ehs"
+            />
+          </div>
+        </div>
+        <div
+          className={
+            educationIndex === 1 ? "education shs" : "education none shs"
+          }
+          onLoad={() => setEducationIndex(1)}
+        >
+          <div className="picture-wrap">
+            <img
+              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728392435/ust_shs_jgj0xp.png"
+              className="image shs"
+            />
+          </div>
+          <div className="text-label-wrap">
+            <label className="text shs">UST Senior High School</label>
+            <label className="text shs-year">2017 - 2019</label>
+          </div>
+          <div className="gif-wrap">
+            <img
+              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728398183/shs_walk_tcyhic.gif"
+              className="walking shs"
+            />
+          </div>
+        </div>
       </div>
     </>
   );
@@ -73,14 +157,19 @@ const AcademicsContent = () => {
 
 interface PresentationProps {
   currentSlideshowIndex: number;
+  direction: string;
 }
 
-const Presentation = ({ currentSlideshowIndex }: PresentationProps) => {
-  console.log("Presentation", currentSlideshowIndex);
+const Presentation = ({
+  currentSlideshowIndex,
+  direction,
+}: PresentationProps) => {
   return (
     <>
-      {currentSlideshowIndex === 0 && <ProfileContent />}
-      {currentSlideshowIndex === 1 && <AcademicsContent />}
+      {currentSlideshowIndex === 0 && <ProfileContent direction={direction} />}
+      {currentSlideshowIndex === 1 && (
+        <AcademicsContent direction={direction} />
+      )}
     </>
   );
 };

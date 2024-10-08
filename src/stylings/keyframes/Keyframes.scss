@@ -119,3 +119,8 @@
         left: 0;
     }
 }
+
+@keyframes walkingAnimation {
+    0% { transform: translateX(-60%); }
+    100% { transform: translateX(90%); }
+}

@@ -16,7 +16,10 @@ const About = () => {
   return (
     <>
       <div className="about-wrap">
-        <Presentation currentSlideshowIndex={selectedEpisode} />
+        <Presentation
+          currentSlideshowIndex={selectedEpisode}
+          direction={currentDirection}
+        />
         <EpisodesMenu
           isVisible={isEpisodesMenuVisible}
           selectedEpisode={selectedEpisode}
