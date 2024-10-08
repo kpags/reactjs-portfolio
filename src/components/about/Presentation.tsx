@@ -108,7 +108,6 @@ const AcademicsContent = ({ direction }: ContentProps) => {
               ? "education highschool"
               : "education none highschool"
           }
-          onLoad={() => setEducationIndex(0)}
         >
           <div className="picture-wrap">
             <img
@@ -131,7 +130,6 @@ const AcademicsContent = ({ direction }: ContentProps) => {
           className={
             educationIndex === 1 ? "education shs" : "education none shs"
           }
-          onLoad={() => setEducationIndex(1)}
         >
           <div className="picture-wrap">
             <img
