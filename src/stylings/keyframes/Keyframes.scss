@@ -121,6 +121,29 @@
 }
 
 @keyframes walkingAnimation {
-    0% { transform: translateX(-60%); }
-    100% { transform: translateX(90%); }
+    0% { transform: translateX(-70%); }
+    100% { transform: translateX(80%); }
+}
+
+@keyframes achievementAppearDisappear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+@keyframes achievementBounce {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-2px); }
+    50% { transform: translateY(-5px); }
+    75% { transform: translateY(-2px); }
+    100% { transform: translateY0(0); }
 }

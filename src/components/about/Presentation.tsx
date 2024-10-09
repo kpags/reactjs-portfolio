@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 interface ContentProps {
   direction: string;
 }
@@ -74,6 +74,15 @@ const ProfileContent = ({ direction }: ContentProps) => {
 
 const AcademicsContent = ({ direction }: ContentProps) => {
   const [educationIndex, setEducationIndex] = useState(0);
+  const [showAchievementText, setShowAchievementText] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowAchievementText((prev) => !prev);
+    }, 15000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -102,51 +111,75 @@ const AcademicsContent = ({ direction }: ContentProps) => {
             onClick={() => setEducationIndex(educationIndex + 1)}
           ></i>
         </div>
-        <div
-          className={
-            educationIndex === 0
-              ? "education highschool"
-              : "education none highschool"
-          }
-        >
-          <div className="picture-wrap">
-            <img
-              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728392435/ust_ehs_dzjda3.png"
-              className="image ehs"
-            />
-          </div>
-          <div className="text-label-wrap">
-            <label className="text ehs">UST Education High School</label>
-            <label className="text ehs-year">2013 - 2017</label>
-          </div>
-          <div className="gif-wrap">
-            <img
-              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728396095/hs_walking_rgxhlr.gif"
-              className="walking ehs"
-            />
-          </div>
+        <div className="achievement-wrap">
+          {showAchievementText && (
+            <label className="achievement-text">
+              Check out my achievements!
+            </label>
+          )}
+          <img
+            src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728468656/trophy_m9owgq.gif"
+            className="achievements"
+          />
         </div>
-        <div
-          className={
-            educationIndex === 1 ? "education shs" : "education none shs"
-          }
-        >
-          <div className="picture-wrap">
-            <img
-              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728392435/ust_shs_jgj0xp.png"
-              className="image shs"
-            />
-          </div>
-          <div className="text-label-wrap">
-            <label className="text shs">UST Senior High School</label>
-            <label className="text shs-year">2017 - 2019</label>
-          </div>
-          <div className="gif-wrap">
-            <img
-              src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728398183/shs_walk_tcyhic.gif"
-              className="walking shs"
-            />
-          </div>
+        {educationIndex === 0 && (
+          <AcademicsEducationContents
+            logo="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728392435/ust_ehs_dzjda3.png"
+            level="hs"
+            name="UST Education High School"
+            year="2013 - 2017"
+            gif="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728396095/hs_walking_rgxhlr.gif"
+          />
+        )}
+        {educationIndex === 1 && (
+          <AcademicsEducationContents
+            logo="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728392435/ust_shs_jgj0xp.png"
+            level="shs"
+            name="UST Senior High School"
+            year="2017 - 2019"
+            gif="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728398183/shs_walk_tcyhic.gif"
+          />
+        )}
+        {educationIndex === 2 && (
+          <AcademicsEducationContents
+            logo="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728392435/ust_cics_puhszp.png"
+            level="college"
+            name="UST College of Information & Computing Sciences"
+            year="2019 - 2023"
+            gif="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728468106/adult_walk_nsbtzy.gif"
+          />
+        )}
+      </div>
+    </>
+  );
+};
+
+interface AcademicsEducationContentsProps {
+  logo: string;
+  level: string;
+  name: string;
+  year: string;
+  gif: string;
+}
+const AcademicsEducationContents = ({
+  logo,
+  level,
+  name,
+  year,
+  gif,
+}: AcademicsEducationContentsProps) => {
+  return (
+    <>
+      <div className={`education ${level}`}>
+        <div className="picture-wrap">
+          <img src={logo} className={`image ${level}`} />
+        </div>
+        <div className="text-label-wrap">
+          <label className={`text ${level}`}>{name}</label>
+          <label className={`text-year ${level}-year`}>{year}</label>
+        </div>
+        <div className="gif-wrap">
+          <img src={gif} className={`walking ${level}`} />
         </div>
       </div>
     </>
