@@ -147,3 +147,13 @@
     75% { transform: translateY(-2px); }
     100% { transform: translateY0(0); }
 }
+
+@keyframes typingAnimation {
+    from { width: 0 }
+    to { width: 50% }
+  }
+  
+  @keyframes typingEffect {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }

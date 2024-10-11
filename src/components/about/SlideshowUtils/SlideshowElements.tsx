@@ -79,16 +79,19 @@ export const EpisodesMenu = ({
 interface SlideshowPreviewProps {
   currentSlideshowIndex: number;
   currentDirection: string;
+  showAchievements: boolean;
 }
 
 export const SlideshowPreview = ({
   currentSlideshowIndex,
   currentDirection,
+  showAchievements,
 }: SlideshowPreviewProps) => {
   return (
     <>
       <div className="slideshow-preview">
         <SlideshowPreviewPictures
+          showAchievements={showAchievements}
           currentSlideshowIndex={currentSlideshowIndex}
           currentDirection={currentDirection}
         />
@@ -100,13 +103,14 @@ export const SlideshowPreview = ({
 export const SlideshowPreviewPictures = ({
   currentSlideshowIndex,
   currentDirection,
+  showAchievements,
 }: SlideshowPreviewProps) => {
   const [animateDirection, setAnimation] = useState(false);
   const [isLoading, setLoading] = useState(true);
 
   const pictures = {
     1: "https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728189149/profile_oiukhi.jpg",
-    2: "https://res.cloudinary.com/dqszzzdu1/image/upload/v1728189549/academics_busrh5.jpg",
+    2: "https://res.cloudinary.com/dqszzzdu1/image/upload/v1728655885/academics_wn1rkp.png",
     3: "https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728188565/skills_cx0k2e.jpg",
     4: "https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728188764/hobbies_wsbrb5.jpg",
   };
@@ -139,7 +143,9 @@ export const SlideshowPreviewPictures = ({
         loading="lazy"
         onLoad={() => setLoading(false)}
         src={currentPicture}
-        className={`preview-picture img-${currentSlideshowIndex} ${
+        className={`preview-picture ${
+          showAchievements ? "blurred" : ""
+        } img-${currentSlideshowIndex} ${
           animateDirection
             ? `${currentDirection === "previous" ? "previous" : "next"} `
             : ""

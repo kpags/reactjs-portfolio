@@ -209,6 +209,65 @@
     .education.none {
         display: none;
     }
+
+    .academic-achievements-wrap {
+        position: absolute;
+        width: 85%;
+        height: 60%;
+        background: url("https://res.cloudinary.com/dqszzzdu1/image/upload/v1728658601/coffee-paper_ncsbep.png");
+        background-size: cover;
+        padding: 15px;
+        border-radius: 10px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .heading {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            label {
+                font-family: "Shadows Into Light", cursive;
+                font-weight: 700;
+                font-style: normal;
+                
+                &.my-achievements-text {
+                    font-size: 25px;
+                    overflow: hidden; /* Ensures the content is not revealed until the animation */
+                    white-space: nowrap; /* Keeps the content on a single line */
+                    letter-spacing: 0; /* Adjust as needed */
+                    animation: 
+                        typingAnimation 1.5s steps(40, end),
+                        typingEffect .75s step-end infinite;
+                }
+
+                &.x-button {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .achievements-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+
+            label {
+                font-family: "Shadows Into Light", cursive;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 18px;
+
+                &.2 {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }
 
 .content.academics {

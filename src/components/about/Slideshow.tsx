@@ -11,6 +11,7 @@ interface SlideshowProps {
   setCurrentDirection: React.Dispatch<React.SetStateAction<string>>;
   currentDirection: string;
   selectedEpisode: number;
+  showAchievements: boolean;
 }
 
 const Slideshow = ({
@@ -19,6 +20,7 @@ const Slideshow = ({
   setCurrentDirection,
   selectedEpisode,
   currentDirection,
+  showAchievements,
 }: SlideshowProps) => {
   const toggleSlideshowIndex = (direction: string) => {
     if (direction === "previous") {
@@ -45,6 +47,7 @@ const Slideshow = ({
         <SlideshowPreview
           currentSlideshowIndex={selectedEpisode + 1}
           currentDirection={currentDirection}
+          showAchievements={showAchievements}
         />
         <SolarMapArrowRightLinear
           className={selectedEpisode < 3 ? "arrow right" : "arrow right hidden"}

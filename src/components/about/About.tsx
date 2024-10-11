@@ -8,6 +8,11 @@ const About = () => {
   const [isEpisodesMenuVisible, setIsEpisodesMenuVisible] = useState(false);
   const [selectedEpisode, setSelectedEpisode] = useState(0);
   const [currentDirection, setCurrentDirection] = useState("");
+  const [showAchievements, setShowAchievements] = useState(false);
+
+  const toggleSetShowAchievements = () => {
+    setShowAchievements(!showAchievements);
+  };
 
   const toggleEpisode = (index: number) => {
     setSelectedEpisode(index);
@@ -17,6 +22,8 @@ const About = () => {
     <>
       <div className="about-wrap">
         <Presentation
+          showAchievements={showAchievements}
+          setShowAchievements={toggleSetShowAchievements}
           currentSlideshowIndex={selectedEpisode}
           direction={currentDirection}
         />
@@ -31,6 +38,7 @@ const About = () => {
           setCurrentDirection={setCurrentDirection}
           selectedEpisode={selectedEpisode}
           currentDirection={currentDirection}
+          showAchievements={showAchievements}
         />
       </div>
     </>

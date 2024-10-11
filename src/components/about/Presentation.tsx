@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 interface ContentProps {
   direction: string;
+  showAchievements: boolean;
+  setShowAchievements: () => void;
 }
 
 const ProfileContent = ({ direction }: ContentProps) => {
@@ -72,7 +74,11 @@ const ProfileContent = ({ direction }: ContentProps) => {
   );
 };
 
-const AcademicsContent = ({ direction }: ContentProps) => {
+const AcademicsContent = ({
+  direction,
+  showAchievements,
+  setShowAchievements,
+}: ContentProps) => {
   const [educationIndex, setEducationIndex] = useState(0);
   const [showAchievementText, setShowAchievementText] = useState(true);
 
@@ -93,6 +99,13 @@ const AcademicsContent = ({ direction }: ContentProps) => {
             : "content previous academics"
         }
       >
+        {showAchievements ? <div className="blur-wrap"></div> : <></>}
+        {showAchievements && (
+          <AcademicAchievements
+            index={educationIndex}
+            setShowAchievements={setShowAchievements}
+          />
+        )}
         <div className="arrows">
           <i
             className={
@@ -120,6 +133,7 @@ const AcademicsContent = ({ direction }: ContentProps) => {
           <img
             src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728468656/trophy_m9owgq.gif"
             className="achievements"
+            onClick={() => setShowAchievements()}
           />
         </div>
         {educationIndex === 0 && (
@@ -186,20 +200,85 @@ const AcademicsEducationContents = ({
   );
 };
 
+interface AcademicAchievementsProps {
+  index: number;
+  setShowAchievements: () => void;
+}
+
+const AcademicAchievements = ({
+  index,
+  setShowAchievements,
+}: AcademicAchievementsProps) => {
+  const achievements = [
+    [
+      "UAAP Season 79 2nd Runner Up",
+      "UAAP Season 79 Single Event Gold Medalist",
+      "S.Y. 2016-2017 Athlete of the Year",
+    ],
+    [
+      "UAAP Season 80 1st Runner Up",
+      "UAAP Season 80 Single Event Bronze Medalist",
+      "UAAP Season 81 1st Runner Up",
+    ],
+    [
+      "Latin Honors: Cum Laude",
+      "Silver Loyalty Award",
+      "S.Y 2021-2022 First and Second Semester Dean's Lister",
+      "S.Y 2022-2023 First and Second Semester Dean's Lister",
+      "IM Summit 2022: Rediscovering Innovation Semifinalist",
+      "PhilNITS IT Certification",
+    ],
+  ];
+
+  return (
+    <>
+      <div className="academic-achievements-wrap">
+        <div className="heading">
+          <label className="my-achievements-text">Achievements</label>
+          <label className="x-button" onClick={() => setShowAchievements()}>
+            X
+          </label>
+        </div>
+        <div className="achievements-content">
+          {achievements[index].map((achievement, index) => (
+            <label key={index} className="achievement">
+              {achievement}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
 interface PresentationProps {
   currentSlideshowIndex: number;
   direction: string;
+  showAchievements: boolean;
+  setShowAchievements: () => void;
 }
 
 const Presentation = ({
   currentSlideshowIndex,
   direction,
+  showAchievements,
+  setShowAchievements,
 }: PresentationProps) => {
   return (
     <>
-      {currentSlideshowIndex === 0 && <ProfileContent direction={direction} />}
+      {currentSlideshowIndex === 0 && (
+        <ProfileContent
+          direction={direction}
+          showAchievements={showAchievements}
+          setShowAchievements={setShowAchievements}
+        />
+      )}
       {currentSlideshowIndex === 1 && (
-        <AcademicsContent direction={direction} />
+        <AcademicsContent
+          direction={direction}
+          showAchievements={showAchievements}
+          setShowAchievements={setShowAchievements}
+        />
       )}
     </>
   );
