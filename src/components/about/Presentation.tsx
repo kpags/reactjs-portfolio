@@ -217,11 +217,14 @@ const AcademicAchievements = ({
       "UAAP Season 79 2nd Runner Up",
       "UAAP Season 79 Single Event Gold Medalist",
       "S.Y. 2016-2017 Athlete of the Year",
+      "Computer Club Assistant Treasurer",
+      "Rosarian Club Grade 10 Representative",
     ],
     [
       "UAAP Season 80 1st Runner Up",
       "UAAP Season 80 Single Event Bronze Medalist",
       "UAAP Season 81 1st Runner Up",
+      "Uaap Season 81 Athletics Team Captain",
     ],
     [
       "Latin Honors: Cum Laude",

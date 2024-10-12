@@ -1,3 +1,7 @@
+.slideshow-wrap.disabled {
+    pointer-events: none;
+}
+
 .slideshow-wrap {
     animation: fadeIn 0.5s ease-in-out;
     width: 100%;
@@ -33,10 +37,6 @@
         height: 23px;
         z-index: 2;
         opacity: 0.8;
-    }
-
-    .ui-episodes.disabled {
-        pointer-events: none;
     }
 }
 

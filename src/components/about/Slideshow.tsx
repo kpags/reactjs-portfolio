@@ -32,9 +32,13 @@ const Slideshow = ({
 
   return (
     <>
-      <div className="slideshow-wrap">
+      <div
+        className={
+          showAchievements ? "slideshow-wrap disabled" : "slideshow-wrap"
+        }
+      >
         <SystemUiconsEpisodes
-          className={showAchievements ? "ui-episodes disabled" : "ui-episodes"}
+          className="ui-episodes"
           onClick={() => setIsEpisodesMenuVisible((prev) => !prev)}
         />
         <SolarMapArrowLeftLinear
