@@ -28,20 +28,11 @@
         text-align: center;
         gap: 20px;
 
-        // .line {
-        //     width: 20%;
-        //     border: 1px solid black;
-        //     opacity: 0.8;
-        // }
-
         label {
             font-family: "Titillium Web", sans-serif;
             font-weight: 600;
             font-size: 25px;
             color: #7b70b5;
-            // background: linear-gradient(45deg, black, #7b70b5, #000000);
-            // -webkit-background-clip: text;
-            // -webkit-text-fill-color: transparent;
         }
     }
 
@@ -103,6 +94,10 @@
         height: 5%;
         padding: 25px 20px 0 20px;
 
+        @media (min-width: 768px) {
+            display: none;
+        }
+
         .bi-arrow-left-short {
             font-size: 20px;
         }
@@ -123,6 +118,10 @@
         justify-content: flex-end;
         align-items: center;
         z-index: 1;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
 
         .achievements {
             cursor: pointer;
@@ -151,6 +150,10 @@
         gap: 25px;
         width: 100%;
         height: 100%;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
 
         .picture-wrap {
             width: 100%;
@@ -202,6 +205,10 @@
                     transform: translateX(-200%);
                     height: 80%;
                     object-fit: fill;
+
+                    @media (min-width: 426px) {
+                        animation: walkingAnimationV2 40s ease-in-out infinite;
+                    }
                 }
             }
         }
@@ -225,7 +232,7 @@
 
     .academic-achievements-wrap {
         position: absolute;
-        width: 85%;
+        width: 300px;
         height: 60%;
         background: url("https://res.cloudinary.com/dqszzzdu1/image/upload/v1728658601/coffee-paper_ncsbep.png");
         background-size: cover;
@@ -235,6 +242,10 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
 
         .heading {
             width: 100%;

@@ -125,6 +125,11 @@
     100% { transform: translateX(220%); }
 }
 
+@keyframes walkingAnimationV2 {
+    0% { transform: translateX(-520%); }
+    100% { transform: translateX(520%); }
+}
+
 @keyframes achievementAppearDisappear {
     0% {
         opacity: 0;
