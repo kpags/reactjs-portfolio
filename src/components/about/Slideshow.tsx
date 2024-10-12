@@ -1,4 +1,7 @@
-import { SlideshowPreview } from "./SlideshowUtils/SlideshowElements";
+import {
+  SlideshowPreview,
+  SlideShowPreviewPicturesV2,
+} from "./SlideshowUtils/SlideshowElements";
 import {
   SolarMapArrowRightLinear,
   SolarMapArrowLeftLinear,
@@ -48,6 +51,7 @@ const Slideshow = ({
             setCurrentDirection("previous");
           }}
         />
+        <SlideShowPreviewPicturesV2 />
         <SlideshowPreview
           currentSlideshowIndex={selectedEpisode + 1}
           currentDirection={currentDirection}

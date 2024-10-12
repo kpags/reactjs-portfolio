@@ -110,6 +110,61 @@ export const SlideshowPreview = ({
   );
 };
 
+export const SlideShowPreviewPicturesV2 = () => {
+  const [activeSlideShow, setActiveSlideShow] = useState("Profile");
+
+  return (
+    <>
+      <div className="slideshow-preview-wide">
+        <div
+          className={`slideshow-box profile ${
+            activeSlideShow === "Profile" ? "active" : ""
+          }`}
+          onClick={() => {
+            setActiveSlideShow("Profile");
+          }}
+        >
+          <label className="title profile">Who's Me?</label>
+          <img src="https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728189149/profile_oiukhi.jpg" />
+        </div>
+        <div
+          className={`slideshow-box academics ${
+            activeSlideShow === "Academics" ? "active" : ""
+          }`}
+          onClick={() => {
+            setActiveSlideShow("Academics");
+          }}
+        >
+          <label className="title academics">Academics</label>
+          <img src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728655885/academics_wn1rkp.png" />
+        </div>
+        <div
+          className={`slideshow-box skills ${
+            activeSlideShow === "Skills" ? "active" : ""
+          }`}
+          onClick={() => {
+            setActiveSlideShow("Skills");
+          }}
+        >
+          <label className="title skills">My Skills</label>
+          <img src="https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728188565/skills_cx0k2e.jpg" />
+        </div>
+        <div
+          className={`slideshow-box hobbies ${
+            activeSlideShow === "Hobbies" ? "active" : ""
+          }`}
+          onClick={() => {
+            setActiveSlideShow("Hobbies");
+          }}
+        >
+          <label className="title hobbies">Hobbies</label>
+          <img src="https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728188764/hobbies_wsbrb5.jpg" />
+        </div>
+      </div>
+    </>
+  );
+};
+
 export const SlideshowPreviewPictures = ({
   currentSlideshowIndex,
   currentDirection,
