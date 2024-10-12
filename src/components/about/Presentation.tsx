@@ -212,6 +212,16 @@ const AcademicAchievements = ({
   setShowAchievements,
   showAchievements,
 }: AcademicAchievementsProps) => {
+  const [achievementsWrapName, setWrapName] = useState(
+    "academic-achievements-wrap hidden"
+  );
+
+  useEffect(() => {
+    setTimeout(() => {
+      setWrapName("academic-achievements-wrap");
+    }, 500);
+  }, []);
+
   const achievements = [
     [
       "UAAP Season 79 2nd Runner Up",
@@ -241,8 +251,8 @@ const AcademicAchievements = ({
       <div
         className={
           showAchievements
-            ? "academic-achievements-wrap"
-            : "academic-achievements-wrap closed"
+            ? `${achievementsWrapName} open`
+            : `${achievementsWrapName} closed`
         }
       >
         <div className="heading">

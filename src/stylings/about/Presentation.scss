@@ -215,8 +215,15 @@
         animation: achievementPaperClosed 0.5s forwards;
     }
 
-    .academic-achievements-wrap {
+    .academic-achievements-wrap.hidden {
+        visibility: hidden;
+    }
+
+    .academic-achievements-wrap.open {
         animation: achievementPaperOpen 0.5s ease-in-out;
+    }
+
+    .academic-achievements-wrap {
         position: absolute;
         width: 85%;
         height: 60%;
