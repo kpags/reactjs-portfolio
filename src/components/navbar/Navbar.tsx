@@ -6,6 +6,8 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const [isMenuOpen, setMenuStatus] = useState(false);
+  const [optionActive, setActiveOption] = useState("Home");
+
   const toggleMenu = () => {
     setMenuStatus(!isMenuOpen);
     localStorage.setItem("isMenuOpen", JSON.stringify(!isMenuOpen));
@@ -33,34 +35,57 @@ const Navbar = () => {
         </div>
         <div className="menu-rows">
           <div
-            className="menu-row"
+            className={optionActive == "Home" ? "menu-row active" : "menu-row"}
             onClick={() => {
               navigate("/");
               toggleMenu();
+              setActiveOption("Home");
             }}
           >
             <i className="bi bi-house-door"></i>
             <label className="home">Home</label>
           </div>
           <div
-            className="menu-row"
+            className={optionActive == "About" ? "menu-row active" : "menu-row"}
             onClick={() => {
               navigate("/about");
               toggleMenu();
+              setActiveOption("About");
             }}
           >
             <i className="bi bi-person"></i>
             <label className="about">About</label>
           </div>
-          <div className="menu-row">
+          <div
+            className={
+              optionActive == "Projects" ? "menu-row active" : "menu-row"
+            }
+            onClick={() => {
+              setActiveOption("Projects");
+            }}
+          >
             <i className="bi bi-briefcase"></i>
             <label className="projects">Projects</label>
           </div>
-          <div className="menu-row">
+          <div
+            className={
+              optionActive == "Resume" ? "menu-row active" : "menu-row"
+            }
+            onClick={() => {
+              setActiveOption("Resume");
+            }}
+          >
             <i className="bi bi-file-earmark-check"></i>
             <label className="resume">Resume</label>
           </div>
-          <div className="menu-row">
+          <div
+            className={
+              optionActive == "Contact" ? "menu-row active" : "menu-row"
+            }
+            onClick={() => {
+              setActiveOption("Contact");
+            }}
+          >
             <i className="bi bi-telephone-inbound"></i>{" "}
             <label className="contact">Contact Me</label>
           </div>
