@@ -193,7 +193,9 @@ const AcademicsEducationContents = ({
           <label className={`text-year ${level}-year`}>{year}</label>
         </div>
         <div className="gif-wrap">
-          <img src={gif} className={`walking ${level}`} />
+          <div className="gif-border">
+            <img src={gif} className={`walking ${level}`} />
+          </div>
         </div>
       </div>
     </>
@@ -223,8 +225,8 @@ const AcademicAchievements = ({
     [
       "Latin Honors: Cum Laude",
       "Silver Loyalty Award",
-      "S.Y 2021-2022 First and Second Semester Dean's Lister",
-      "S.Y 2022-2023 First and Second Semester Dean's Lister",
+      "S.Y. 2021-2022 First and Second Semester Dean's Lister",
+      "S.Y. 2022-2023 First and Second Semester Dean's Lister",
       "IM Summit 2022: Rediscovering Innovation Semifinalist",
       "PhilNITS IT Certification",
     ],
