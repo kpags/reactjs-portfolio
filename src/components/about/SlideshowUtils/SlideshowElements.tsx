@@ -19,7 +19,13 @@ export const EpisodesMenu = ({
     return storedStatus ? JSON.parse(storedStatus) : false;
   });
 
+  const [episodeWrapName, setWrapName] = useState("episode-wrap hidden");
+
   useEffect(() => {
+    setTimeout(() => {
+      setWrapName("episode-wrap");
+    }, 500);
+
     const handleStorageChange = () => {
       const storedStatus = localStorage.getItem("isMenuOpen");
       setMenuStatus(storedStatus ? JSON.parse(storedStatus) : false);
@@ -37,8 +43,8 @@ export const EpisodesMenu = ({
       <div
         className={
           isVisible && !isMenuOpen && !showAchievements
-            ? "episode-wrap"
-            : "episode-wrap closed"
+            ? `${episodeWrapName} open`
+            : `${episodeWrapName} closed`
         }
       >
         <div

@@ -249,12 +249,6 @@
                 
                 &.my-achievements-text {
                     font-size: 25px;
-                    overflow: hidden; /* Ensures the content is not revealed until the animation */
-                    white-space: nowrap; /* Keeps the content on a single line */
-                    letter-spacing: 0; /* Adjust as needed */
-                    animation: 
-                        typingAnimation 1.5s steps(40, end),
-                        typingEffect .75s step-end infinite;
                 }
 
                 &.x-button {

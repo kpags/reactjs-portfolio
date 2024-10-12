@@ -13,6 +13,14 @@
     }
 }
 
+.episode-wrap.hidden {
+    visibility: hidden;
+}
+
+.episode-wrap.open {
+    animation: episodeMenuSlideOpen 0.1s ease-in-out forwards;
+}
+
 .episode-wrap {
     position: absolute;
     width: 150px;
@@ -28,7 +36,6 @@
     display: flex;
     flex-direction: column;
     justify-self: center;
-    animation: episodeMenuSlideOpen 0.1s ease-in-out forwards;
 
     &::before {
         content: '';
