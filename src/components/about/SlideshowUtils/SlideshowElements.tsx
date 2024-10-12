@@ -5,12 +5,14 @@ interface EpisodesMenuProps {
   isVisible: boolean;
   selectedEpisode: number;
   setSelectedEpisode: (value: number) => void;
+  showAchievements: boolean;
 }
 
 export const EpisodesMenu = ({
   isVisible,
   selectedEpisode,
   setSelectedEpisode,
+  showAchievements,
 }: EpisodesMenuProps) => {
   const [isMenuOpen, setMenuStatus] = useState(() => {
     const storedStatus = localStorage.getItem("isMenuOpen");
@@ -34,7 +36,9 @@ export const EpisodesMenu = ({
     <>
       <div
         className={
-          isVisible && !isMenuOpen ? "episode-wrap" : "episode-wrap closed"
+          isVisible && !isMenuOpen && !showAchievements
+            ? "episode-wrap"
+            : "episode-wrap closed"
         }
       >
         <div

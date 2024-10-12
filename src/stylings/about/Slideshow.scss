@@ -34,6 +34,10 @@
         z-index: 2;
         opacity: 0.8;
     }
+
+    .ui-episodes.disabled {
+        pointer-events: none;
+    }
 }
 
 .slideshow-preview {

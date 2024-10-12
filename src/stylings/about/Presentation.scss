@@ -211,7 +211,12 @@
         display: none;
     }
 
+    .academic-achievements-wrap.closed {
+        animation: achievementPaperClosed 0.5s forwards;
+    }
+
     .academic-achievements-wrap {
+        animation: achievementPaperOpen 0.5s ease-in-out;
         position: absolute;
         width: 85%;
         height: 60%;

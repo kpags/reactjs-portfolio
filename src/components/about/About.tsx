@@ -31,6 +31,7 @@ const About = () => {
           isVisible={isEpisodesMenuVisible}
           selectedEpisode={selectedEpisode}
           setSelectedEpisode={toggleEpisode}
+          showAchievements={showAchievements}
         />
         <Slideshow
           setIsEpisodesMenuVisible={setIsEpisodesMenuVisible}

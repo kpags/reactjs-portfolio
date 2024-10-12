@@ -100,12 +100,11 @@ const AcademicsContent = ({
         }
       >
         {showAchievements ? <div className="blur-wrap"></div> : <></>}
-        {showAchievements && (
-          <AcademicAchievements
-            index={educationIndex}
-            setShowAchievements={setShowAchievements}
-          />
-        )}
+        <AcademicAchievements
+          showAchievements={showAchievements}
+          index={educationIndex}
+          setShowAchievements={setShowAchievements}
+        />
         <div className="arrows">
           <i
             className={
@@ -205,11 +204,13 @@ const AcademicsEducationContents = ({
 interface AcademicAchievementsProps {
   index: number;
   setShowAchievements: () => void;
+  showAchievements: boolean;
 }
 
 const AcademicAchievements = ({
   index,
   setShowAchievements,
+  showAchievements,
 }: AcademicAchievementsProps) => {
   const achievements = [
     [
@@ -234,7 +235,13 @@ const AcademicAchievements = ({
 
   return (
     <>
-      <div className="academic-achievements-wrap">
+      <div
+        className={
+          showAchievements
+            ? "academic-achievements-wrap"
+            : "academic-achievements-wrap closed"
+        }
+      >
         <div className="heading">
           <label className="my-achievements-text">Achievements</label>
           <label className="x-button" onClick={() => setShowAchievements()}>

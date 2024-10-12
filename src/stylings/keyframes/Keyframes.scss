@@ -157,3 +157,21 @@
     from, to { border-color: transparent }
     50% { border-color: orange; }
   }
+
+@keyframes achievementPaperOpen {
+    0% {
+        transform: translateY(150%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes achievementPaperClosed {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(150%);
+    }
+}
