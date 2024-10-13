@@ -112,6 +112,21 @@ export const SlideshowPreview = ({
 
 export const SlideShowPreviewPicturesV2 = () => {
   const [activeSlideShow, setActiveSlideShow] = useState("Profile");
+  const [nextSlide, setNextSlide] = useState(0);
+  const [originSlideIndex, setOriginSlideIndex] = useState(0);
+
+  console.log("Active Slide:", activeSlideShow);
+  const toggleOriginSlideIndex = () => {
+    if (activeSlideShow === "Profile") {
+      setOriginSlideIndex(0);
+    } else if (activeSlideShow === "Academics") {
+      setOriginSlideIndex(1);
+    } else if (activeSlideShow === "Skills") {
+      setOriginSlideIndex(2);
+    } else if (activeSlideShow === "Hobbies") {
+      setOriginSlideIndex(3);
+    }
+  };
 
   return (
     <>
@@ -122,10 +137,28 @@ export const SlideShowPreviewPicturesV2 = () => {
           }`}
           onClick={() => {
             setActiveSlideShow("Profile");
+            setNextSlide(0);
+            toggleOriginSlideIndex();
           }}
         >
           <label className="title profile">Who's Me?</label>
           <img src="https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728189149/profile_oiukhi.jpg" />
+        </div>
+        <div className="connector-line">
+          <div
+            className={`line-flow ${
+              (nextSlide === 1 && originSlideIndex === 0) ||
+              (originSlideIndex === 0 && nextSlide - originSlideIndex > 1)
+                ? "traverse-right"
+                : `${
+                    nextSlide === 0 && originSlideIndex === 1
+                      ? "traverse-left"
+                      : nextSlide === 0 && originSlideIndex - nextSlide > 1
+                      ? "traverse-left delay-v1"
+                      : ""
+                  }`
+            }`}
+          ></div>
         </div>
         <div
           className={`slideshow-box academics ${
@@ -133,10 +166,29 @@ export const SlideShowPreviewPicturesV2 = () => {
           }`}
           onClick={() => {
             setActiveSlideShow("Academics");
+            setNextSlide(1);
+            toggleOriginSlideIndex();
           }}
         >
           <label className="title academics">Academics</label>
           <img src="https://res.cloudinary.com/dqszzzdu1/image/upload/v1728655885/academics_wn1rkp.png" />
+        </div>
+        <div className="connector-line">
+          <div
+            className={`line-flow ${
+              nextSlide === 2 && originSlideIndex === 1
+                ? "traverse-right"
+                : nextSlide > 1 && originSlideIndex <= 1
+                ? "traverse-right delay-v2"
+                : `${
+                    nextSlide === 1 && originSlideIndex === 2
+                      ? "traverse-left"
+                      : nextSlide <= 1 && originSlideIndex > 1
+                      ? "traverse-left delay-v2"
+                      : ""
+                  }`
+            }`}
+          ></div>
         </div>
         <div
           className={`slideshow-box skills ${
@@ -144,10 +196,28 @@ export const SlideShowPreviewPicturesV2 = () => {
           }`}
           onClick={() => {
             setActiveSlideShow("Skills");
+            setNextSlide(2);
+            toggleOriginSlideIndex();
           }}
         >
           <label className="title skills">My Skills</label>
           <img src="https://res.cloudinary.com/dqszzzdu1/image/upload/c_thumb,w_200,g_face/v1728188565/skills_cx0k2e.jpg" />
+        </div>
+        <div className="connector-line">
+          <div
+            className={`line-flow ${
+              nextSlide === 3 && originSlideIndex === 2
+                ? "traverse-right"
+                : nextSlide === 3 && originSlideIndex < nextSlide
+                ? "traverse-right delay-v1"
+                : `${
+                    (nextSlide === 2 && originSlideIndex === 3) ||
+                    (nextSlide < originSlideIndex && originSlideIndex === 3)
+                      ? "traverse-left"
+                      : ""
+                  }`
+            }`}
+          ></div>
         </div>
         <div
           className={`slideshow-box hobbies ${
@@ -155,6 +225,8 @@ export const SlideShowPreviewPicturesV2 = () => {
           }`}
           onClick={() => {
             setActiveSlideShow("Hobbies");
+            setNextSlide(3);
+            toggleOriginSlideIndex();
           }}
         >
           <label className="title hobbies">Hobbies</label>
