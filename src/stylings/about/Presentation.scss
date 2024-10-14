@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 10px 0 10px 0;
-    overflow: hidden;
+    overflow: scroll;
 
     .title-wrap {
         display: flex;
@@ -26,7 +26,7 @@
         align-items: center;
         width: 100%;
         text-align: center;
-        gap: 20px;
+        gap: 10px;
 
         label {
             font-family: "Titillium Web", sans-serif;
@@ -40,7 +40,6 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%;
         padding-top: 15px;
         padding-left: 15px;
         gap: 12px;
@@ -64,24 +63,24 @@
                 font-style: normal;
             }
         }
+    }
 
-        .thoughts-wrap {
+    .thoughts-wrap {
+        display: block;
+        padding: 3px 10px 3px 10px;
+        width: 100%;
+        height: 55%;
+        overflow-y: scroll;
+
+        .thoughts-text {
             font-family: "Nanum Gothic", sans-serif;
             font-weight: 400;
-            font-size: 2vh;
+            font-size: 17px;
             font-style: normal;
-            width: 95%;
-            height: 55%;
-            overflow-y: scroll;
             text-align: justify;
-            padding-right: 5px;
             scroll-behavior: smooth;
             scrollbar-color: #d7cfff #f1f1f1;
             scrollbar-gutter:inherit;
-
-            @media (max-height: 730px) {
-                font-size: 1.5vh;
-            }
         }
     }
 

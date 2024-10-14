@@ -49,8 +49,9 @@ const ProfileContent = ({ direction }: ContentProps) => {
             />
             <label className="text bday">April 30, 2000</label>
           </div>
-
-          <div className="thoughts-wrap">
+        </div>
+        <div className="thoughts-wrap">
+          <div className="thoughts-text">
             I've always been fascinated by how technology works and the impact
             it has on our society. This curiosity is what led me to pursue a
             career in IT—I wanted to dive into the world of technology and

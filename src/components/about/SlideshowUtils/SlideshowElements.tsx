@@ -115,7 +115,6 @@ export const SlideShowPreviewPicturesV2 = () => {
   const [nextSlide, setNextSlide] = useState(0);
   const [originSlideIndex, setOriginSlideIndex] = useState(0);
 
-  console.log("Active Slide:", activeSlideShow);
   const toggleOriginSlideIndex = () => {
     if (activeSlideShow === "Profile") {
       setOriginSlideIndex(0);
