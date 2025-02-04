@@ -1,14 +1,8 @@
-name: Sample Reactjs
+name: Sample-Reactjs
 description: Sample Reactjs for Lyrid Demo
-ignoreFiles:
-  - .git
-  - node_modules
-  - build
-  - .env
-  - yarn.lock
-  - package-lock.json
+ignoreFiles: .git node_modules build .env yarn.lock package-lock.json
 modules:
-  - name: Sample Reactjs Module
+  - name: Sample-Reactjs-Module
     language: nodejs18.x
     web: react
     description: Sample Module for reactjs
