@@ -1,4 +1,4 @@
-.name: Sample Reactjs
+name: Sample Reactjs
 description: Sample Reactjs for Lyrid Demo
 ignoreFiles:
   - .git
